@@ -1,0 +1,5 @@
+pdfplumber
+pydantic>=2.0
+fastapi
+uvicorn[standard]
+python-multipart
