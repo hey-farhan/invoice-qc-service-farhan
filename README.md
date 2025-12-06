@@ -299,7 +299,43 @@ React-based web interface for interactive validation:
 ### System Flow Diagram
 
 ```
-[Placeholder for Mermaid diagram - to be added]
+flowchart TB
+    Start([PDF Documents]) --> Extract[PDF Extraction<br/>pdfplumber]
+    
+    Extract --> Parse[Parse German Format<br/>- Text extraction<br/>- Table parsing<br/>- Regex patterns]
+    
+    Parse --> JSON[Structured JSON<br/>Purchase Order Data]
+    
+    JSON --> Validate[Validation Engine<br/>Pydantic Schema]
+    
+    Validate --> Rules{15 Validation Rules}
+    
+    Rules --> Complete[Completeness<br/>R1-R4]
+    Rules --> Format[Format/Type<br/>R5-R9]
+    Rules --> Business[Business Logic<br/>R10-R13]
+    Rules --> Anomaly[Anomaly Detection<br/>R14-R15]
+    
+    Complete --> Results
+    Format --> Results
+    Business --> Results
+    Anomaly --> Results
+    
+    Results[Validation Results<br/>JSON Report] --> Output{Output Channels}
+    
+    Output --> CLI[CLI Tool<br/>- extract<br/>- validate<br/>- full-run]
+    Output --> API[REST API<br/>- /validate-json<br/>- /extract-and-validate]
+    Output --> UI[Web UI<br/>React Frontend]
+    
+    CLI --> Files[JSON Files<br/>extracted_data.json<br/>validation_data.json]
+    API --> Integration[External Systems<br/>- ERP Integration<br/>- Queue Processing<br/>- Dashboards]
+    UI --> Browser[Interactive Review<br/>Filter & Sort Results]
+    
+    style Start fill:#e1f5ff
+    style JSON fill:#fff4e1
+    style Results fill:#e8f5e9
+    style Files fill:#f3e5f5
+    style Integration fill:#fff3e0
+    style Browser fill:#e8eaf6
 ```
 
 ---
