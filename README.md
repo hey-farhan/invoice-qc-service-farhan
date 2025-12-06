@@ -669,33 +669,33 @@ services:
 
 **Limitation:** The extraction logic is optimized for the specific PDF format in the sample data. PDFs with significantly different layouts may fail extraction.
 
-**Impact:** New PDF formats might require regex pattern updates.
+New PDF formats might require regex pattern updates.
 
-**Mitigation:** Dual extraction strategy (table + text fallback) handles some variations.
+Dual extraction startegy (table + text fallback) handles some variations.
 
 #### 2. Price Extraction Edge Cases
 
 **Limitation:** The "pro 1 VE" price pattern might not appear in all PDFs or might be formatted differently.
 
-**Current Handling:** Fallback searches full text using material number as anchor.
+Fallback searches full text using material number as anchor.
 
 **Known Issue:** If both table extraction and text search fail, price_per_ve will be 0.0.
 
 #### 3. Multi-Page PDFs
 
-**Limitation:** Line items spanning multiple pages might not be correctly associated.
+ Line items spanning multiple pages might not be correctly associated.
 
-**Impact:** Large orders with many line items could have incomplete extraction.
+Large orders with many line items could have incomplete extraction.
 
-**Simplification:** Assumed most orders fit on 1-2 pages based on sample data.
+Assumed most orders fit on 1-2 pages based on sample data.
 
 #### 4. Delivery Address Parsing
 
 **Limitation:** Multi-line addresses are extracted as comma-separated text, which might not preserve exact formatting.
 
-**Impact:** Address validation or geocoding would require additional parsing.
+ Address validation or geocoding would require additional parsing.
 
-**Simplification:** Focused on capturing the address text rather than structured components (street, city, postal code).
+ Focused on capturing the address text rather than structured components (street, city, postal code).
 
 #### 5. Error Recovery
 
