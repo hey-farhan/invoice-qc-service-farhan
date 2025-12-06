@@ -1,6 +1,6 @@
 # German B2B Purchase Order QC System
 
-A complete quality control system for validating German B2B purchase orders (Bestellung). The system extracts data from PDF documents, validates against business rules, and provides results through CLI, HTTP API, and a web interface.
+A complete quality control system for validating (Bestellung) German B2B purchase orders (Mentioned as Invoices in assignment detials). The system extracts data from PDF documents, validates against business rules, and provides results through CLI, HTTP API, and a web interface.
 
 ---
 
@@ -16,7 +16,7 @@ This project implements a full-stack purchase order quality control system with 
 ✅ **REST API** - FastAPI-based HTTP endpoints for integration with other systems  
 ✅ **Web UI** - React frontend for interactive validation and review  
 
-The system handles the complete workflow from raw PDF documents to validated, structured data with detailed error reporting.
+
 
 ---
 
@@ -24,7 +24,36 @@ The system handles the complete workflow from raw PDF documents to validated, st
 
 ### Purchase Order Fields
 
-I designed the schema to capture the essential information from German B2B purchase orders, focusing on the 4-party hierarchy that's critical for German business transactions.
+I designed the schema to capture the essential information from German B2B purchase orders, based on what I understood after thoroughly analyzing the sample pdf files (by translation and analysis using Grok) -focusing on the 4-party hierarchy that's critical for German business transactions.
+
+#### what i understood after translation and analysis using Grok
+
+The invoices provided are actually Purchase Orders (Bestellungen) . They have a strict 4-party hierarchy that's critical for German business transactions. The Purchase Order is sent to the supplier/vendor by the purchasing entity (creator/parent company) and the supplier sends the invoice to the end customer. The end customer then sends the invoice to the parent company. 
+The orders will supposedly be delivered to the end customer and the end customer will supposedly pay the invoice, which (end customer) is a part of the parent company. 
+
+key translations that helped me - 
+1. Unsere Kundennummer - Our customer number (creator customer number)
+
+2. Kundennummer - Customer number (end customer number)
+
+3. Bitte liefern Sie an: - Please deliver to 
+
+4. Kundenanschrift - Billing address (end customer address)
+
+5. Zentraleinkauf - Central purchase (creator name)
+
+6. VE - per unit (quantity in packaging units)
+
+7. vom - from (order date)
+
+8. Gewünschtes Lieferdatum - Expected delivery date
+
+9. sofort - immediately (payment terms)
+
+10. Zahlungsbedingungen - Payment terms
+
+
+
 
 #### Header Fields
 
@@ -143,9 +172,9 @@ B2B_PO_Invoice_QC/
 ├── po_qc/                      # Main Python package
 │   ├── __init__.py            # Package initialization
 │   ├── __main__.py            # CLI entry point
-│   ├── utils.py               # Logging utilities
+│   ├── utils.py               # utilities
 │   ├── extractor.py           # PDF extraction logic
-│   ├── validator.py           # Pydantic models + validation rules
+│   ├── validator.py           # Pydantic models (Schema) + validation rules
 │   ├── cli.py                 # Command-line interface
 │   └── api.py                 # FastAPI HTTP endpoints
 ├── frontend/                   # React web interface
@@ -672,70 +701,63 @@ services:
 
 **Limitation:** If PDF extraction fails completely, the system returns empty data rather than attempting alternative extraction methods.
 
-**Impact:** Corrupted or scanned PDFs will fail silently.
+Corrupted or scanned PDFs will fail silently.
 
-**Future Enhancement:** Could add OCR fallback for scanned documents.
+Could add OCR fallback for scanned documents.
 
 #### 6. Validation Rule Thresholds
 
 **Limitation:** Some thresholds (e.g., 10,000 EUR limit, 7-11 digit customer numbers) are based on sample data and might not cover all real-world cases.
 
-**Impact:** Edge cases outside observed patterns might be incorrectly flagged.
+Edge cases outside observed patterns might be incorrectly flagged.
 
-**Mitigation:** Thresholds can be easily adjusted in validator.py.
+Thresholds can be easily adjusted in validator.py.
 
 #### 7. Concurrent Processing
 
 **Limitation:** CLI processes files sequentially. No parallel processing for large batches.
 
-**Impact:** Processing hundreds of PDFs could be slow.
+Processing hundreds of PDFs could be slow.
 
-**Future Enhancement:** Could add multiprocessing for batch operations.
+Could add multiprocessing for batch operations.
 
 #### 8. Database Persistence
 
 **Limitation:** No database integration. All results are file-based (JSON).
 
-**Impact:** Can't query historical validations or track trends over time.
+Can't query historical validations or track trends over time.
 
-**Simplification:** Kept system stateless for simplicity and easier deployment.
+Kept system stateless for simplicity and easier deployment.
 
-#### 9. Authentication/Authorization
 
-**Limitation:** API has no authentication. Anyone with network access can use it.
 
-**Impact:** Not suitable for production without adding auth layer.
-
-**Simplification:** Focused on core functionality rather than security infrastructure.
-
-#### 10. Frontend Error Handling
+#### 9. Frontend Error Handling
 
 **Limitation:** Basic error messages. No retry logic or detailed error breakdowns in UI.
 
-**Impact:** Users might not understand why validation failed without checking JSON response.
+Users might not understand why validation failed without checking JSON response.
 
-**Future Enhancement:** Could add more granular error display and retry mechanisms.
 
 ### Time-Based Simplifications
 
 Due to time constraints, I intentionally simplified:
 
 1. **No Unit Tests:** Focused on functional implementation rather than test coverage
-2. **No CI/CD:** Manual deployment process
+2. **No Data Storage in Database** 
 3. **No Logging Infrastructure:** Basic console logging only
 4. **No Performance Optimization:** No caching, indexing, or query optimization
 5. **No Internationalization:** German-only, no multi-language support
 
-These limitations are documented here for transparency and could be addressed in future iterations based on production requirements.
+These limitations are documented here for transparency and could be addressed in future if required.
 
 ---
 
 ## License
 
-This project was created as part of a technical assessment.
-
+This project was created as part of a technical assessment for DeepLogic.ai 
+All rights reserved.
 ---
 
 ## Contact
 
-For questions or issues, please contact [Your Name/Email].
+For questions or issues, please contact Farhan Inamdar / inamdarfarhan37@gmail.com 
