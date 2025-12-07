@@ -1,0 +1,251 @@
+[
+  {
+    "order_number": "AUFNR34343",
+    "order_date": "22.05.2024",
+    "creator_name": "Zentraleinkauf",
+    "creator_customer_number": "11223344",
+    "parent_company_id": "3498578433",
+    "end_customer_number": "7654321",
+    "delivery_destination": "Beispielname Unternehmen, Matternfeld, SL 44624",
+    "subtotal": 64.0,
+    "vat_rate": 19.0,
+    "vat_amount": 12.16,
+    "gross_total": 76.16,
+    "currency": "EUR",
+    "payment_terms": "0 Tage 2,0% Skonto",
+    "delivery_date": "sofort",
+    "doc_type": "PurchaseOrder",
+    "line_items": [
+      {
+        "position": 1,
+        "product_name": "Sterilisationsmittel",
+        "supplier_article_no": "000253655G",
+        "internal_material_no": "49115",
+        "cost_center": "20457",
+        "quantity_ve": 4,
+        "unit_conversion": null,
+        "price_per_ve": 16.0,
+        "line_total": 64.0
+      }
+    ]
+  },
+  {
+    "order_number": "AUFNR234953",
+    "order_date": "02.05.2022",
+    "creator_name": "Zentraleinkauf",
+    "creator_customer_number": "4380292",
+    "parent_company_id": "0293479054",
+    "end_customer_number": "2342154",
+    "delivery_destination": "Softwareunternehmen, Süd Lenjaberg, SN 48103",
+    "subtotal": 216.0,
+    "vat_rate": 19.0,
+    "vat_amount": 41.04,
+    "gross_total": 257.04,
+    "currency": "EUR",
+    "payment_terms": "0 Tage 2,0% Skonto",
+    "delivery_date": "sofort",
+    "doc_type": "PurchaseOrder",
+    "line_items": [
+      {
+        "position": 1,
+        "product_name": "LED-Monitore 12'",
+        "supplier_article_no": "000252944C",
+        "internal_material_no": "48805",
+        "cost_center": "19257",
+        "quantity_ve": 4,
+        "unit_conversion": null,
+        "price_per_ve": 16.0,
+        "line_total": 64.0
+      },
+      {
+        "position": 2,
+        "product_name": "USB-Maus",
+        "supplier_article_no": "000252944C",
+        "internal_material_no": "49786",
+        "cost_center": "19257",
+        "quantity_ve": 2,
+        "unit_conversion": null,
+        "price_per_ve": 16.0,
+        "line_total": 32.0
+      },
+      {
+        "position": 3,
+        "product_name": "mechanische Tastatur",
+        "supplier_article_no": "00025843C",
+        "internal_material_no": "23359",
+        "cost_center": "19257",
+        "quantity_ve": 5,
+        "unit_conversion": null,
+        "price_per_ve": 24.0,
+        "line_total": 120.0
+      }
+    ]
+  },
+  {
+    "order_number": "AUFNR34869",
+    "order_date": "28.05.2025",
+    "creator_name": "Zentraleinkauf",
+    "creator_customer_number": "87698553",
+    "parent_company_id": "7892348503",
+    "end_customer_number": "5748943",
+    "delivery_destination": "Beispiel Bergbauunternehmen, Beispielstraße 10, 80000 München",
+    "subtotal": 1080.0,
+    "vat_rate": 19.0,
+    "vat_amount": 205.2,
+    "gross_total": 1285.2,
+    "currency": "EUR",
+    "payment_terms": "0 Tage 2,0% Skonto",
+    "delivery_date": "sofort",
+    "doc_type": "PurchaseOrder",
+    "line_items": [
+      {
+        "position": 1,
+        "product_name": "Bohrmaschine",
+        "supplier_article_no": "000453955M",
+        "internal_material_no": "45505",
+        "cost_center": "19587",
+        "quantity_ve": 4,
+        "unit_conversion": null,
+        "price_per_ve": 160.0,
+        "line_total": 640.0
+      },
+      {
+        "position": 2,
+        "product_name": "Bergmannshelm mit Fackeln",
+        "supplier_article_no": "000253356M",
+        "internal_material_no": "57306",
+        "cost_center": "19587",
+        "quantity_ve": 2,
+        "unit_conversion": null,
+        "price_per_ve": 160.0,
+        "line_total": 320.0
+      },
+      {
+        "position": 3,
+        "product_name": "Schaufeln S40/5-100[21159]",
+        "supplier_article_no": "WM",
+        "internal_material_no": "21259",
+        "cost_center": "19587",
+        "quantity_ve": 5,
+        "unit_conversion": null,
+        "price_per_ve": 24.0,
+        "line_total": 20.0
+      }
+    ]
+  },
+  {
+    "order_number": "AUFNR123456",
+    "order_date": "02.05.2022",
+    "creator_name": "Zentraleinkauf",
+    "creator_customer_number": "1234567",
+    "parent_company_id": "9876543210",
+    "end_customer_number": "7654321",
+    "delivery_destination": "Freiburg Gesundheitszentrum, Beispielstraße 10, 80000 München",
+    "subtotal": 216.0,
+    "vat_rate": 19.0,
+    "vat_amount": 41.04,
+    "gross_total": 257.04,
+    "currency": "EUR",
+    "payment_terms": "0 Tage 2,0% Skonto",
+    "delivery_date": "sofort",
+    "doc_type": "PurchaseOrder",
+    "line_items": [
+      {
+        "position": 1,
+        "product_name": "Schutzmaske Medium",
+        "supplier_article_no": "000252955H",
+        "internal_material_no": "49305",
+        "cost_center": "19257",
+        "quantity_ve": 4,
+        "unit_conversion": null,
+        "price_per_ve": 16.0,
+        "line_total": 64.0
+      },
+      {
+        "position": 2,
+        "product_name": "Disp Mask small CV_ w/o hook",
+        "supplier_article_no": "000252954H",
+        "internal_material_no": "49306",
+        "cost_center": "19257",
+        "quantity_ve": 2,
+        "unit_conversion": null,
+        "price_per_ve": 16.0,
+        "line_total": 32.0
+      },
+      {
+        "position": 3,
+        "product_name": "Standard-Monitoring EKG Elek S40/5-100[29459]",
+        "supplier_article_no": "WS",
+        "internal_material_no": "29459",
+        "cost_center": "19257",
+        "quantity_ve": 5,
+        "unit_conversion": null,
+        "price_per_ve": 24.0,
+        "line_total": 120.0
+      }
+    ]
+  },
+  {
+    "order_number": "AUFNR89493",
+    "order_date": "18.08.2025",
+    "creator_name": "Zentraleinkauf",
+    "creator_customer_number": "9340923",
+    "parent_company_id": "",
+    "end_customer_number": "23908473",
+    "delivery_destination": "Unternehmensunternehmen, Auf der Weide 8,, Nicobrunn, RP 27408",
+    "subtotal": 264.0,
+    "vat_rate": 19.0,
+    "vat_amount": 50.16,
+    "gross_total": 314.16,
+    "currency": "EUR",
+    "payment_terms": "0 Tage 2,0% Skonto",
+    "delivery_date": "sofort",
+    "doc_type": "PurchaseOrder",
+    "line_items": [
+      {
+        "position": 1,
+        "product_name": "Hefter- und Steckna",
+        "supplier_article_no": "00045420",
+        "internal_material_no": "45505",
+        "cost_center": "20587",
+        "quantity_ve": 4,
+        "unit_conversion": null,
+        "price_per_ve": 16.0,
+        "line_total": 64.0
+      },
+      {
+        "position": 2,
+        "product_name": "Ordner",
+        "supplier_article_no": "00025111",
+        "internal_material_no": "57306",
+        "cost_center": "19587",
+        "quantity_ve": 2,
+        "unit_conversion": null,
+        "price_per_ve": 16.0,
+        "line_total": 32.0
+      },
+      {
+        "position": 3,
+        "product_name": "Schaufeln",
+        "supplier_article_no": "00055391",
+        "internal_material_no": "21455",
+        "cost_center": "20587",
+        "quantity_ve": 5,
+        "unit_conversion": null,
+        "price_per_ve": 24.0,
+        "line_total": 120.0
+      },
+      {
+        "position": 4,
+        "product_name": "Schaufeln",
+        "supplier_article_no": "0007983",
+        "internal_material_no": "20211",
+        "cost_center": "20587",
+        "quantity_ve": 2,
+        "unit_conversion": null,
+        "price_per_ve": 24.0,
+        "line_total": 48.0
+      }
+    ]
+  }
+]
