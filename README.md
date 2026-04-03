@@ -635,34 +635,6 @@ services:
 
 ---
 
-## AI Usage Notes
-
-### Tools Used
-I used **Google Gemini (inside Copilot) & Perplexity(Grok 4.1)** as a helper for this project for specific tasks while I maintained full control over architecture and design decisions and major implementations.
-
-### Where AI was helpful : 
-1. **German Text Translation & Analysis**
-   - Used Grok to translate German PDF field labels and understand the 4-party hierarchy.
-   - This was crucial for correctly mapping fields like "Unsere Kundennummer" vs "Endkundennummer"
-   - it helped me understand that these are Purchase Orders (Bestellung), not invoices
-   - I generated translated replicas of German Invoices into english to understand the structure
-     better
-   ![image](ai-notes/transleted_invoice.png)
-2. **Regex Pattern Refinement**
-   - AI suggested initial regex patterns for extracting order numbers, dates, and customer numbers
-   - I iteratively refined these based on actual PDF structure analysis
-
-3. **Pydantic Schema Structure**
-   - AI provided boilerplate for Pydantic models and field validators
-   - I customized validation logic based on business requirements (e.g., 4-party hierarchy, cost center requirements)
-   see **[ai-notes/grok chat.pdf]**
-
-4. **FastAPI Endpoint Scaffolding**
-   - AI generated initial API structure with CORS middleware
-   - I added custom error handling and file upload logic
-
-5.**Documentation ( README.md Creation) and Mermaind diagram Generation**
-
 
 ### Where AI Was Wrong/Incomplete
 
@@ -804,7 +776,6 @@ https://drive.google.com/file/d/1_8ZRRGs05Gtm7D6E4SnEvnQpeIhDcgTO/view?usp=shari
 
 ## License
 
-This project was created as part of a technical assessment for DeepLogic.ai 
 All rights reserved.
 ---
 
